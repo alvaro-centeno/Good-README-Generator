@@ -3,9 +3,11 @@ const inquirer = require('inquirer');
 const axios = require('axios');
 
 inquirer.prompt({
-    messgae: "Enter Github username"
+    type: 'input',
+    messgae: "Enter Github username",
+    name: 'username'
 }).then(function ({ username }) {
-    const searchUrl = `https://api.github.com/users/${username}`
+    const searchUrl = `https://api.github.com/users/${username}`;
 
     axios.get(searchUrl).then((res) =>
         fs.writeFile('README.md', { username }), function (err) {
@@ -22,8 +24,8 @@ inquirer.prompt({
 inquirer.prompt([
     {
         type: "input",
-        message: "what is your name",
-        name: "username"
+        message: "what is your git hub username",
+        name: "user"
 
     },
     {
@@ -53,15 +55,10 @@ inquirer.prompt([
     {
         type: "input",
         message: "Usage",
-        name: "Usage"
+        name: "usage"
 
     },
     {
-        type: "input",
-        message: "Usage",
-        name: "Usage"
-
-    }, {
         type: "input",
         message: "License",
         name: "license"
@@ -77,4 +74,25 @@ inquirer.prompt([
         name: "tests"
 
     },
-])
+]).then(function (res) {
+    console.log(res.user);
+    console.log(res.title);
+    console.log(res.description);
+    console.log(res.table);
+    console.log(res.installation);
+    console.log(res.usage);
+    console.log(res.license);
+    console.log(res.contributing);
+    console.log(res.tests);
+
+
+
+
+
+
+
+
+
+
+
+})
