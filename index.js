@@ -5,7 +5,7 @@ const axios = require('axios');
 inquirer.prompt({
     type: 'input',
     message: "Enter your Github user name",
-    name: 'user'
+    name: 'username'
 }).then(function ({ username }) {
     const searchUrl = `https://api.github.com/users/${username}`;
 
@@ -64,7 +64,7 @@ inquirer.prompt({
                 name: "email",
             }
         ]).then(function (res) {
-            console.log(res.user);
+            console.log(res.username);
             console.log(res.title);
             console.log(res.description);
             console.log(res.installation);
@@ -72,11 +72,11 @@ inquirer.prompt({
             console.log(res.license);
             console.log(res.contributing);
             console.log(res.tests);
-            fs.writeFile('README.md', `
+            fs.writeFile(`README.md`, `
     #Title: ${res.title}
     #User
     ![user's avatar](${avatar})
-    [${username}](${url}) | email: ${res.email} | repos: ${repos}
+    username: [${username}](${url}) | email: ${res.email} | repos: ${repos}
     #Description ${res.description}
     #Installation ${res.installation}
     #Tables of Contents: 
@@ -87,9 +87,10 @@ inquirer.prompt({
     * License
     * Contributing
     * Tests
-    #Installation ${res.installation}
+    #Installation 
+        * How to: ${res.installation}
     #Usage ${res.usage}
-    #License ${res.usage}
+    #License ${res.license}
     #Contributing ${res.contributing}
     #Tests ${res.tests} `
                 , (error) => {
