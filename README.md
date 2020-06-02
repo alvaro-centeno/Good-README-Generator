@@ -1,16 +1,13 @@
 
 #Title: Readme Generator 
 ---
-##User
 ![user's avatar](https://avatars3.githubusercontent.com/u/15698615?v=4)
-username: [alvaro-centeno](https://github.com/alvaro-centeno) | email: alvaroc0689@gmail.com | repos: https://api.github.com/users/alvaro-centeno/repos
+**username:** [alvaro-centeno](https://github.com/alvaro-centeno) | **email:** alvaroc0689@gmail.com | **repos:** https://api.github.com/users/alvaro-centeno/repos
 
 ---
 
-##Description How to make an easy Readme generator
----
-
-##Installation npm install 
+##Description 
+Create a quick and easy Readme.md
 ---
 ##Tables of Contents: 
 * Description
@@ -22,9 +19,10 @@ username: [alvaro-centeno](https://github.com/alvaro-centeno) | email: alvaroc06
 * Tests
 ---
 ##Installation 
-* How to: npm install 
+* How to: 
+:floppy_disk: npm install/npm inquirer
 ---
-##Usage To help with making a quick and easy Readme
+##Usage 
 ---
 ##License 
 ---

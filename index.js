@@ -75,16 +75,13 @@ inquirer.prompt({
             fs.writeFile(`README.md`, `
 #Title: ${res.title}
 ---
-##User
 ![user's avatar](${avatar})
-username: [${username}](${url}) | email: ${res.email} | repos: ${repos}
+**username:** [${username}](${url}) | **email:** ${res.email} | **repos:** ${repos}
 
 ---
 
-##Description ${res.description}
----
-
-##Installation ${res.installation}
+##Description 
+${res.description}
 ---
 ##Tables of Contents: 
 * Description
@@ -96,7 +93,8 @@ username: [${username}](${url}) | email: ${res.email} | repos: ${repos}
 * Tests
 ---
 ##Installation 
-* How to: ${res.installation}
+* How to: 
+:floppy_disk: ${res.installation}
 ---
 ##Usage ${res.usage}
 ---
