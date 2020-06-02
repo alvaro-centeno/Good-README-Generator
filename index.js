@@ -73,26 +73,38 @@ inquirer.prompt({
             console.log(res.contributing);
             console.log(res.tests);
             fs.writeFile(`README.md`, `
-    #Title: ${res.title}
-    #User
-    ![user's avatar](${avatar})
-    username: [${username}](${url}) | email: ${res.email} | repos: ${repos}
-    #Description ${res.description}
-    #Installation ${res.installation}
-    #Tables of Contents: 
-    * Description
-    * Table of Contents
-    * Installation
-    * Usage
-    * License
-    * Contributing
-    * Tests
-    #Installation 
-        * How to: ${res.installation}
-    #Usage ${res.usage}
-    #License ${res.license}
-    #Contributing ${res.contributing}
-    #Tests ${res.tests} `
+#Title: ${res.title}
+---
+##User
+![user's avatar](${avatar})
+username: [${username}](${url}) | email: ${res.email} | repos: ${repos}
+
+---
+
+##Description ${res.description}
+---
+
+##Installation ${res.installation}
+---
+##Tables of Contents: 
+* Description
+* Table of Contents
+* Installation
+* Usage
+* License
+* Contributing
+* Tests
+---
+##Installation 
+* How to: ${res.installation}
+---
+##Usage ${res.usage}
+---
+##License ${res.license}
+---
+##Contributing ${res.contributing}
+---
+##Tests ${res.tests} `
                 , (error) => {
                     if (error) {
                         console.log(error);
